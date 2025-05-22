@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alex <alex@student.42.fr>                  +#+  +:+       +#+         #
+#    By: columbux <columbux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/26 11:12:46 by alex              #+#    #+#              #
-#    Updated: 2024/10/03 12:01:48 by alex             ###   ########.fr        #
+#    Updated: 2025/05/22 14:46:06 by columbux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,17 @@ NAME    	:= megaphone
 CC      	:= g++
 CPPFLAGS  	:= -std=c++98
 CFLAGS  	:= -Wall -Werror -Wextra
+
+#██████████████████████████████ Colors ████████████████████████████████████████#
+DEF_COLOR 		=	\033[0;39m
+GRAY 			=	\033[0;90m
+RED 			=	\033[0;91m
+GREEN 			=	\033[0;92m
+YELLOW 			=	\033[0;93m
+BLUE 			=	\033[0;94m
+MAGENTA 		=	\033[0;95m
+CYAN 			=	\033[0;96m
+WHITE 			=	\033[0;97m
 
 #█████████████████████████████ SOURCES █████████████████████████████████████████#
 
@@ -44,3 +55,8 @@ re: 		fclean all
 .PHONY:		all clean fclean re
 
 #█████████████████████████████ Custom rules ████████████████████████████████████#
+
+run:		fclean
+			@echo "$(GREEN)Runing $(NAME)! 🚀$(WHITE)\n"
+			@make re
+			@./$(NAME) Columpio
