@@ -6,23 +6,37 @@
 #    By: columbux <columbux@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/03 13:01:48 by alex              #+#    #+#              #
-#    Updated: 2025/05/20 00:57:33 by columbux         ###   ########.fr        #
+#    Updated: 2025/05/22 14:15:35 by columbux         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #████████████████████████████ Configuration ███████████████████████████████████#
 
-NAME    	:= phonebook
+NAME    	:= PhoneBook
 CC      	:= g++
 CPPFLAGS  	:= -std=c++98
 CFLAGS  	:= -Wall -Werror -Wextra
+
+#██████████████████████████████ Colors ████████████████████████████████████████#
+DEF_COLOR 		=	\033[0;39m
+GRAY 			=	\033[0;90m
+RED 			=	\033[0;91m
+GREEN 			=	\033[0;92m
+YELLOW 			=	\033[0;93m
+BLUE 			=	\033[0;94m
+MAGENTA 		=	\033[0;95m
+CYAN 			=	\033[0;96m
+WHITE 			=	\033[0;97m
+
 
 #█████████████████████████████ SOURCES █████████████████████████████████████████#
 
 SRC			=		ponebook.cpp contact.cpp main.cpp
 
 OBJ			=		$(SRC:.cpp=.o)
+
 #████████████████████████████ Rules ████████████████████████████████████████████#
+
 all:		$(NAME)
 
 
@@ -44,3 +58,8 @@ re: 		fclean all
 .PHONY:		all clean fclean re
 
 #█████████████████████████████ Custom rules ████████████████████████████████████#
+
+run:		fclean
+			@echo "$(GREEN)Runing $(NAME)! 🚀$(WHITE)\n"
+			@make re
+			@./PhoneBook
