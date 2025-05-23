@@ -33,7 +33,7 @@ Cada ejercicio tiene su propio Makefile, así que ejecuta el comando dentro del 
 ### 📢 Megaphone (ex00)
 
 ```bash
-./megaphone Hello "42 School"
+./megaphone "42 School"
 ```
 
 ### 📇 PhoneBook (ex01)
@@ -55,6 +55,7 @@ Comandos disponibles:
 ```
 
 El programa simula cuentas bancarias usando un archivo de tests predefinido. Se muestran depósitos, retiros y estados de cuenta.
+| Al tratarse del standar 98, al compilar se muestran **warnings** de funciones **deprecated**
 
 ## Lo aprendido 💡
 
@@ -62,11 +63,4 @@ El programa simula cuentas bancarias usando un archivo de tests predefinido. Se 
 * Encapsulamiento y clases básicas
 * Métodos estáticos vs de instancia
 * Inicialización de listas
-* Manejo de `iostream`, `iomanip`, `string`
-
-## Recursos útiles 🔗
-
-* [cppreference.com](https://en.cppreference.com)
-* [cplusplus.com](http://www.cplusplus.com/reference/)
-
----
+* Manejo de `iostream`, `iomanip`, `string` , `chrono`
