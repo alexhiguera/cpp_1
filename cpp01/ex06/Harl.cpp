@@ -1,0 +1,85 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahiguera <ahiguera@student.42urduliz.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/23 20:07:36 by ahiguera          #+#    #+#             */
+/*   Updated: 2025/06/13 12:03:59 by ahiguera         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Harl.hpp"
+#include <string>
+#include <iostream>
+
+const std::string	Harl::_levels[4] = {"ERROR", "WARNING", "INFO", "DEBUG"};
+
+void	Harl::debug(void)
+{
+	std::cout << "[DEBUG]" << std::endl << "I love having extra bacon for my 7XL-double-cheese-triple-"
+		"pickle-specialketchup burger. I really do !" << std::endl;
+}
+
+void	Harl::info(void)
+{
+	std::cout << "[INFO]" << std::endl << "I cannot believe adding extra bacon costs more money."
+		" You didn't put enough bacon in my burger ! If you did, I wouldn't be"
+		" asking for more !" << std::endl;
+}
+
+void	Harl::warning(void)
+{
+	std::cout << "[WARNING]" << std::endl << "I think I deserve to have some extra bacon for free. I've"
+		" been coming for years whereas you started working here since last month."
+		<< std::endl;
+}
+
+void	Harl::error(void)
+{
+	std::cout << "[ERROR]" << std::endl << "This is unacceptable ! I want to speak to the manager now."
+		<< std::endl;
+}
+
+static int	get_filter(const std::string *levels, const std::string &s)
+{
+	for (int i = 0; i < 4; i++)
+		if (s == levels[i])
+			return (i);
+	std::cout << "* Probably complaining about insignificant problems... *" << std::endl;
+	return (-1);
+}
+
+void	Harl::complain(std::string filter)
+{
+	int	level = get_filter(this->_levels, filter);
+
+	if (level <= this->_filter)
+	{
+		switch (level)
+		{
+			case 3:
+				this->debug();
+				break ;
+			case 2:
+				this->info();
+				break ;
+			case 1:
+				this->warning();
+				break ;
+			default:
+				this->error();
+		}
+	}
+}
+
+Harl::Harl(const std::string &s)
+{
+	this->_filter = get_filter(this->_levels, s);
+}
+
+Harl::~Harl(void)
+{
+	return ;
+}

@@ -6,14 +6,14 @@
 #    By: ahiguera <ahiguera@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/23 20:07:36 by ahiguera          #+#    #+#              #
-#    Updated: 2025/06/13 12:06:04 by ahiguera         ###   ########.fr        #
+#    Updated: 2025/06/13 12:12:08 by ahiguera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 #████████████████████████████ Configuration ███████████████████████████████████#
 
-NAME    	:= zombies
+NAME    	:= 
 CC      	:= g++
 CPPFLAGS  	:= -std=c++98
 CFLAGS  	:= -Wall -Werror -Wextra
@@ -33,7 +33,7 @@ WHITE 			=	\033[0;97m
 
 #█████████████████████████████ SOURCES █████████████████████████████████████████#
 
-SRC			=		main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC			=		main.cpp Harl.cpp
 
 OBJ			=		$(SRC:.cpp=.o)
 

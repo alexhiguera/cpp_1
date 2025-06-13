@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahiguera <ahiguera@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 20:07:36 by ahiguera          #+#    #+#             */
-/*   Updated: 2025/06/13 12:02:00 by ahiguera         ###   ########.fr       */
+/*   Updated: 2025/06/13 12:03:47 by ahiguera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
 
-void    randomChump(std::string name)
+# include <string>
+
+class Harl
 {
-    Zombie  zombie(name);
+	private:
+		static const std::string	_levels[4];
 
-    zombie.announce();
-}
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
+
+	public:
+		Harl(void);
+		~Harl(void);
+
+		void	complain(std::string);
+};
+
+#endif /* HARL_HPP */
